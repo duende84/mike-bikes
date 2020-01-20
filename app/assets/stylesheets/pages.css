@@ -1,0 +1,134 @@
+a {
+  text-decoration: none
+}
+.horizontal-accordion {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  padding: 0;
+}
+.horizontal-accordion ul {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 0;
+  margin: 0 auto;
+  padding:0;
+}
+.horizontal-accordion ul li {
+  width: 33.333%;
+  height: 100%;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 100px;
+  cursor: pointer;
+  transition: width 0.75s;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover; /*REMOVE TO GET RID OF EXPANSION*/
+  display: table;
+  float:left;
+}
+.horizontal-accordion ul li:first-of-type {
+  background-image: url('./moto.jpg')
+}
+.horizontal-accordion ul li:nth-of-type(2) {
+  background-image: url('./cycle.jpg')
+}
+.horizontal-accordion ul li:nth-of-type(3) {
+  background-image: url('./road.jpg')
+}
+.horizontal-accordion ul li.js-active-accordion {
+  width: 70%;
+}
+.horizontal-accordion ul li a {
+  height:100%;
+  width:100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color:#FFF;
+  font-size: 2.75em;
+  line-height: 1.25em;
+}
+.horizontal-accordion ul li a:hover span {
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+.vertical-accordion {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height:100%;
+  padding: 0;
+}
+.vertical-accordion ul {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 0;
+  margin: 0 auto;
+  padding:0;
+}
+.vertical-accordion ul li {
+  height: 33%;
+  width: 100%;
+  font-size: 12px;
+  line-height: 100px;
+  cursor: pointer;
+  transition: width 0.75s;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover; /*REMOVE TO GET RID OF EXPANSION*/
+  display: table;
+  float:left;
+}
+.vertical-accordion ul li:first-of-type {
+  background-image: url('./moto.jpg')
+}
+.vertical-accordion ul li:nth-of-type(2) {
+  background-image: url('./cycle.jpg')
+}
+.vertical-accordion ul li:nth-of-type(3) {
+  background-image: url('./road.jpg')
+}
+.vertical-accordion ul li a {
+  height:100%;
+  width:100%;
+  display: table-cell;
+  vertical-align: bottom;
+  text-align: left;
+  color:#FFF;
+  font-size: 2.75em;
+  line-height: 1.25em;
+  padding: 0 0 50px 30px;
+}
+.vertical-accordion ul li a span {
+  border:solid 1px #FFF;
+  background: #272727;padding:15px;
+}
+.bottom{z-index: 1; color:#FFF; background: #272727; width:100%; position:fixed; bottom:0; height:10%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+50,000000+100&0+0,1+50 */
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+  display: table;
+}
+.bottom .content{
+  display: table-cell;
+  text-align: center;
+  font-size: 2em;
+  vertical-align: bottom;
+  padding-bottom:2%;
+}
+
+@media only screen and (max-width: 1080px) {
+  .horizontal-accordion ul li a {vertical-align:bottom;padding-bottom: 100%;}
+  .vertical-accordion ul li:first-of-type{}
+  .bottom{display: none;}
+  .horizontal-accordion{display:none;}
+  .vertical-accordion{display:block;}
+}
