@@ -8,8 +8,6 @@ import Shop from './Shop';
 import NotFound from './NotFound';
 
 const App = () => {
-  window.onpopstate = ()=> { console.log('back')}
-
   return(
     <Router>
       <Switch>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Academy() {
+const Academy = () => {
   return(<div>Academy</div>);
 }
 

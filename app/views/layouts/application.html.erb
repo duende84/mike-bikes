@@ -5,25 +5,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
   </head>
 
   <body>
     <%= yield %>
   </body>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $(".horizontal-accordion ul li").hover(function(){
-        var self = $(this);
-        self.addClass("js-active-accordion");
-        $(".horizontal-accordion ul li").not(self).css("width","15%");
-      },
-      function(){
-        $(".horizontal-accordion ul li").removeClass("js-active-accordion").removeAttr("style");
-      });
-    });
-  </script>
 </html>

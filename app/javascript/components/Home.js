@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import $ from 'jquery';
 
-function Home() {
+const Home = () => {
   const [content, setContent] = useState("Choose a Discipline...");
 
   function mouseOver(e){
@@ -11,6 +12,15 @@ function Home() {
   function mouseLeave(e){
     setContent("Choose a Discipline...");
   }
+
+  $(".horizontal-accordion ul li").hover(function(){
+    var self = $(this);
+    self.addClass("js-active-accordion");
+    $(".horizontal-accordion ul li").not(self).css("width","15%");
+  },
+  function(){
+    $(".horizontal-accordion ul li").removeClass("js-active-accordion").removeAttr("style");
+  });
 
   return(
     <div>
