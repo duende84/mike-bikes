@@ -24,6 +24,9 @@ const Home = () => {
 
   return(
     <div>
+      <div className="top">
+        <img src="./assets/logo.png" />
+      </div>
       <div className="horizontal-accordion">
         <ul>
           <li onMouseEnter={e => mouseOver(e)} onMouseLeave={e => mouseLeave(e)}>

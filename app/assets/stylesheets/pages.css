@@ -1,6 +1,24 @@
 a {
   text-decoration: none
 }
+.top{
+  z-index: 1;
+  background: #272727;
+  width: 100%;
+  position:fixed;
+  top:0;
+  height:20%;
+  /*background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));*/
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+50,000000+100&1+50,0+100 */
+  background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 25%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 25%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+.top img{
+  height:50px;
+  padding:23px 0 18px 0;
+}
 .horizontal-accordion {
   position: absolute;
   width: 100%;
@@ -109,7 +127,14 @@ a {
   border:solid 1px #FFF;
   background: #272727;padding:15px;
 }
-.bottom{z-index: 1; color:#FFF; background: #272727; width:100%; position:fixed; bottom:0; height:10%;
+.bottom{
+  z-index: 1;
+  color:#FFF;
+  background: #272727;
+  width:100%;
+  position:fixed;
+  bottom:0;
+  height:10%;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+50,000000+100&0+0,1+50 */
   background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -126,6 +151,12 @@ a {
 }
 
 @media only screen and (max-width: 1080px) {
+  .top{ /* FF3.6-15 */
+    background: -webkit-linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 50%);
+    background: -o-linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 50%);
+    background: linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 50%); /* Chrome10-25,Safari5.1-6 */
+  }
+  .top img{display: none}
   .horizontal-accordion ul li a {vertical-align:bottom;padding-bottom: 100%;}
   .vertical-accordion ul li:first-of-type{}
   .bottom{display: none;}
