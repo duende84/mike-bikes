@@ -13,9 +13,3 @@
  *= require_tree .
  *= require_self
  */
-body {
-  margin: 0;
-  text-align: center;
-  background-color: #272727;
-  font-family: 'Ubuntu', sans-serif;
-}

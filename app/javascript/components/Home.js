@@ -25,7 +25,7 @@ const Home = () => {
   return(
     <div>
       <div className="top">
-        <img src="./assets/logo.png" />
+        <img src="assets/logo.png" />
       </div>
       <div className="horizontal-accordion">
         <ul>

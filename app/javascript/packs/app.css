@@ -1,4 +1,14 @@
+body {
+  margin: 0;
+  text-align: center;
+  background-color: #272727;
+  color: #cccccc;
+  font-family: 'Ubuntu', sans-serif;
+}
 a {
+  text-decoration: none
+}
+a:hover {
   text-decoration: none
 }
 .top{
@@ -16,8 +26,8 @@ a {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 .top img{
-  height:50px;
-  padding:23px 0 18px 0;
+  height: 80px;
+  padding: 20px 0 10px 0;
 }
 .horizontal-accordion {
   position: absolute;
@@ -48,13 +58,13 @@ a {
   float:left;
 }
 .horizontal-accordion ul li:first-of-type {
-  background-image: url('./moto.jpg')
+  background-image: url('/assets/moto.jpg')
 }
 .horizontal-accordion ul li:nth-of-type(2) {
-  background-image: url('./cycle.jpg')
+  background-image: url('/assets/cycle.jpg')
 }
 .horizontal-accordion ul li:nth-of-type(3) {
-  background-image: url('./road.jpg')
+  background-image: url('/assets/road.jpg')
 }
 .horizontal-accordion ul li.js-active-accordion {
   width: 70%;
@@ -104,13 +114,13 @@ a {
   float:left;
 }
 .vertical-accordion ul li:first-of-type {
-  background-image: url('./moto.jpg')
+  background-image: url('/assets/moto.jpg')
 }
 .vertical-accordion ul li:nth-of-type(2) {
-  background-image: url('./cycle.jpg')
+  background-image: url('/assets/cycle.jpg')
 }
 .vertical-accordion ul li:nth-of-type(3) {
-  background-image: url('./road.jpg')
+  background-image: url('/assets/road.jpg')
 }
 .vertical-accordion ul li a {
   height:100%;
@@ -125,7 +135,8 @@ a {
 }
 .vertical-accordion ul li a span {
   border:solid 1px #FFF;
-  background: #272727;padding:15px;
+  background: #272727;
+  padding:15px;
 }
 .bottom{
   z-index: 1;
@@ -152,14 +163,20 @@ a {
 
 @media only screen and (max-width: 1080px) {
   .top{ /* FF3.6-15 */
+    height:10%;
     background: -webkit-linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 50%);
     background: -o-linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 50%);
     background: linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 50%); /* Chrome10-25,Safari5.1-6 */
   }
-  .top img{display: none}
+  .top img{display: none;}
   .horizontal-accordion ul li a {vertical-align:bottom;padding-bottom: 100%;}
   .vertical-accordion ul li:first-of-type{}
   .bottom{display: none;}
   .horizontal-accordion{display:none;}
   .vertical-accordion{display:block;}
+}
+
+.container {
+  padding-right: 0;
+  padding-left: 0;
 }
