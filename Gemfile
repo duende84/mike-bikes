@@ -37,6 +37,12 @@ gem 'rails_admin', '~> 2.0', '>= 2.0.1'
 # bootstrap
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 
+# File uploader
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+
+# File Storage Provider
+gem 'cloudinary', '~> 1.13', '>= 1.13.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
