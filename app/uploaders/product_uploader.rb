@@ -7,7 +7,7 @@ class ProductUploader < CarrierWave::Uploader::Base
   process :tags => ['hnr']
 
   version :thumbnail do
-    resize_to_fit(100, 100)
+    resize_to_fit(200, 250)
   end
 
   def extension_white_list

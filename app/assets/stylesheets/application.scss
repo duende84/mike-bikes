@@ -196,3 +196,22 @@ a:hover {
   padding-right: 0;
   padding-left: 0;
 }
+
+.card {
+  height: 28rem;
+  margin-bottom: 15px;
+}
+
+.card-img {
+  height: 250px;
+}
+
+.card-text {
+  margin: 5px 0 15px;
+  text-align: justify;
+}
+
+.card-button {
+  position: absolute;
+  bottom: 15px;
+}
