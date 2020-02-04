@@ -1,4 +1,4 @@
-class ProductUploader < CarrierWave::Uploader::Base
+class CourseUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -6,7 +6,7 @@ class ProductUploader < CarrierWave::Uploader::Base
 
   THUMBNAIL_WIDTH = 200
 
-  process :tags => ['hnr-product']
+  process :tags => ['hnr-course']
 
   version :thumbnail do
     resize_to_fit(THUMBNAIL_WIDTH, nil)
