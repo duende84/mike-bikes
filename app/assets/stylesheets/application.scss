@@ -176,7 +176,6 @@ a:hover {
   vertical-align: bottom;
   padding-bottom:2%;
 }
-
 @media only screen and (max-width: 1080px) {
   .top{ /* FF3.6-15 */
     height:10%;
@@ -191,7 +190,6 @@ a:hover {
   .horizontal-accordion{display:none;}
   .vertical-accordion{display:block;}
   .login-block{}
-  .container-shoppingcart{background:none;}
 }
 .container {
   padding-right: 0;
@@ -278,7 +276,7 @@ a:hover {
   background: linear-gradient(to bottom, black,rgb(102, 97, 97)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   float:left;
   width:100%;
-  padding : 50px 0;
+  padding : 0 0;
 }
 .banner-sec{
   background-size:cover; 
@@ -286,41 +284,19 @@ a:hover {
   border-radius: 0 10px 10px 0; 
   padding:0;
 }
-.container-shoppingcart{
+.container-login{
   background-image: url('/assets/banner.jpg');
   background-size: cover;
   border-radius: 40px; 
   box-shadow:15px 20px 0px rgba(0,0,0,0.1);
   padding: 5%;
-  margin: 5%; 
+  margin: 5%;
 }
-.container-singup{
-  background-image: url('/assets/banner2.jpg');
-  background-size: cover;
-  border-radius: 40px; 
-  box-shadow:15px 20px 0px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin: 40px; 
-}
-.container-forgot{
-  background-image: url('/assets/banner3.jpg');
-  background-size: cover;
-  border-radius: 40px; 
-  box-shadow:15px 20px 0px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin: 40px; 
-}
-.container-loginshoppingcart{
+.container-loginAdmin{
   background:white; 
   border-radius: 40px; 
   box-shadow:15px 20px 0px rgba(0,0,0,0.1);
   padding: 20px;
-}
-.carousel-inner{
-  border-radius:0 10px 10px 0;
-}
-.carousel-caption{
-  text-align:left; left:5%;
 }
 .login-sec{
   padding: 50px 30px; 
@@ -357,7 +333,7 @@ a:hover {
   margin-right:auto
 }
 .btn-login{
-  background: black; 
-  color:#fff; 
+  background:rgb(102, 97, 97); 
+  color:rgb(255, 255, 255);
   font-weight:600;
 }
