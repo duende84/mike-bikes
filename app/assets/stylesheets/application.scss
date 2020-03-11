@@ -211,8 +211,8 @@ a:hover {
 }
 .login-block{
   background: black;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, black,rgb(102, 97, 97));  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, black,rgb(102, 97, 97)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, black,#666161);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, black,#666161); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   float:left;
   width:100%;
   padding : 0 0;
@@ -238,7 +238,7 @@ a:hover {
   color: black;
 }
 .btn-login{
-  background:rgb(102, 97, 97);
-  color:rgb(255, 255, 255);
+  background:#666161;
+  color: #FFFFFF;
   font-weight:600;
 }
