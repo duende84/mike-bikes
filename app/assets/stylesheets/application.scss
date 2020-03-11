@@ -217,12 +217,6 @@ a:hover {
   width:100%;
   padding : 0 0;
 }
-.banner-sec{
-  background-size:cover;
-  min-height:500px;
-  border-radius: 0 10px 10px 0;
-  padding:0;
-}
 .container-login{
   background-image: url('/assets/banner.jpg');
   background-size: cover;
@@ -231,45 +225,17 @@ a:hover {
   padding: 5%;
   margin: 5%;
 }
-.container-loginAdmin{
+.container-login-form{
   background:white;
   border-radius: 40px;
   box-shadow:15px 20px 0px rgba(0,0,0,0.1);
   padding: 20px;
-}
-.login-sec{
-  padding: 50px 30px;
-  position:relative;
-}
-.login-sec .copy-text{
-  position:absolute;
-  width:80%;
-  bottom:20px;
-  font-size:13px;
-  text-align:center;
-}
-.login-sec .copy-text i{
-  color:black;
-}
-.login-sec .copy-text a{
-  color:#E36262;
 }
 .login-sec h2{
   margin-bottom:30px;
   font-weight:800;
   font-size:30px;
   color: black;
-}
-.login-sec h2:after{
-  content:" ";
-  width:100px;
-  height:5px;
-  background:black;
-  display:block;
-  margin-top:20px;
-  border-radius:3px;
-  margin-left:auto;
-  margin-right:auto
 }
 .btn-login{
   background:rgb(102, 97, 97);
