@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { GiShoppingCart } from "react-icons/gi";
 
 const NavNar = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -25,6 +26,10 @@ const NavNar = () => {
           <li className="nav-item">
             <Link to="/shop" title="Shop" className="nav-link">Shop</Link>
           </li>
+          <li className="nav-item">
+          <Link to="/shoppingcart" title="ShoppingCart" className="nav-link"><span><GiShoppingCart size="25" />ShoppingCart</span></Link>
+          </li>
+
         </ul>
       </div>
     </nav>

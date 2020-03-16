@@ -1,8 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useAlert } from 'react-alert';
+import { connect, useSelector } from "react-redux";
+import { MdAddShoppingCart } from "react-icons/md";
 import Truncate from 'react-truncate';
-import NavBar from './NavBar';
+import addCartItem from '../store/action';
 
-const Product = ({product}) => {
+const Product = ({ product, addCartItem }) => {
+  const cartItems = useSelector(state => {
+    return state.reducer.cartItems
+  })
+  const alert = useAlert()
+  function validation() {
+    var isInShoppingCart = cartItems.find(item => ((item.id === product.id )&&(item.name === product.name)))
+    if (isInShoppingCart) {
+      alert.info(' This item is already in the cart. If you want to buy several units of this product, you can increase it from the shopping cart section')
+    } else {
+      alert.success('product added to cart',{timeout: 2000})
+      addCartItem(product)
+    }
+  }
+
   return(
     <div className="col-12 col-md-6 col-lg-4">
       <div className="card">
@@ -16,7 +33,7 @@ const Product = ({product}) => {
           </div>
           <div className="row card-button">
             <div className="col">
-              <a href="#" className="btn btn-primary">Shop now - {product.price}</a>
+              <a onClick={validation} className="btn btn-primary"> <MdAddShoppingCart size="25"/> Us{product.price}</a>
             </div>
           </div>
         </div>
@@ -25,4 +42,4 @@ const Product = ({product}) => {
   );
 }
 
-export default Product;
+export default connect(null, {addCartItem})(Product);
