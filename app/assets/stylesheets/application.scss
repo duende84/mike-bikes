@@ -176,7 +176,6 @@ a:hover {
   vertical-align: bottom;
   padding-bottom:2%;
 }
-
 @media only screen and (max-width: 1080px) {
   .top{ /* FF3.6-15 */
     height:10%;
@@ -191,27 +190,54 @@ a:hover {
   .horizontal-accordion{display:none;}
   .vertical-accordion{display:block;}
 }
-
 .container {
   padding-right: 0;
   padding-left: 0;
 }
-
 .card {
   height: 28rem;
   margin-bottom: 15px;
 }
-
 .card-img {
   height: 250px;
 }
-
 .card-text {
   margin: 5px 0 15px;
   text-align: justify;
 }
-
 .card-button {
   position: absolute;
   bottom: 15px;
+}
+.login-block{
+  background: black;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, black,#666161);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, black,#666161); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  float:left;
+  width:100%;
+  padding : 0 0;
+}
+.container-login{
+  background-image: url('/assets/banner.jpg');
+  background-size: cover;
+  border-radius: 40px;
+  box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+  padding: 5%;
+  margin: 5%;
+}
+.container-login-form{
+  background:white;
+  border-radius: 40px;
+  box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+.login-sec h2{
+  margin-bottom:30px;
+  font-weight:800;
+  color: black;
+}
+.btn-login{
+  background:#666161;
+  color: #FFFFFF;
+  font-weight:600;
 }
