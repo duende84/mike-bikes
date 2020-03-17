@@ -25,7 +25,7 @@ const Home = () => {
   return(
     <div>
       <div className="top">
-        <img src="assets/logo.png" />
+        <img src="assets/logoNew.png" />
       </div>
       <div className="horizontal-accordion">
         <ul>
@@ -34,7 +34,7 @@ const Home = () => {
           </li>
           <li onMouseEnter={e => mouseOver(e)} onMouseLeave={e => mouseLeave(e)}>
             <Link to="/academy" title="Academy"><span>Academy</span></Link>
-           </li>
+          </li>
           <li onMouseEnter={e => mouseOver(e)} onMouseLeave={e => mouseLeave(e)}>
             <Link to="/shop" title="Shop"><span>Shop</span></Link>
           </li>
