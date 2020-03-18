@@ -3,11 +3,12 @@ import { connect, useSelector } from "react-redux";
 import { useAlert } from 'react-alert';
 import { MdAddShoppingCart } from "react-icons/md";
 import Truncate from 'react-truncate';
-import addCartItem from '../store/action'
+import addCartItem from '../store/actions/addCartItem'
+
 
 const Course = ({course, addCartItem}) => {
   const cartItems = useSelector(state => {
-    return state.reducer.cartItems
+    return state.cartReducer.cartItems
   })
   const alert = useAlert()
   function validation(){
@@ -32,7 +33,7 @@ const Course = ({course, addCartItem}) => {
           </div>
           <div className="row card-button">
             <div className="col">
-              <a onClick={validation} className="btn btn-primary"><MdAddShoppingCart size="25"/> Us{course.price}</a>
+              <a onClick={validation} className="btn btn-primary"><MdAddShoppingCart size="25"/> $ {course.price} USD</a>
             </div>
           </div>
         </div>

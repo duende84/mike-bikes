@@ -6,10 +6,11 @@ import { GiShoppingCart } from "react-icons/gi";
 import NavBar from './NavBar';
 import ShoppingCartItem from './ShoppingCartItem';
 
-const ShoppingCart = () => {
+
+const ShoppingCart = ({addOrderItem}) => {
   const alert = useAlert()
   const cartItems = useSelector(state => {
-    return state.reducer.cartItems
+    return state.cartReducer.cartItems
   })
   var email = null
 
@@ -39,7 +40,7 @@ const ShoppingCart = () => {
 
   function createMail(){
     alert.show(
-      <div >
+      <div>
         Since you want to buy these products, leave us your information and our advisor will contact you directly.
         <div>
           <label style={{color:'cyan'}}>Email:
@@ -67,7 +68,6 @@ const ShoppingCart = () => {
         <Link to="/shop" className="btn btn-outline-info btn-sm pull-right "><span>Continue shopping</span></Link>
         <div className="pull-right">
           <a onClick={createMail}  className="btn btn-success pull-right">BUY</a>
-
         </div>
       </div>
     </div>

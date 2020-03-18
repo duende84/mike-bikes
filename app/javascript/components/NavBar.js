@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GiShoppingCart } from "react-icons/gi";
 
-const NavNar = () => {
+const NavBar = () => {
   const [collapsed, setCollapsed] = useState(false);
   const show = collapsed ? "show" : "";
 
@@ -11,7 +11,6 @@ const NavNar = () => {
       <button className="navbar-toggler" type="button" onClick={ () => setCollapsed(!collapsed) }>
         <span className="navbar-toggler-icon"></span>
       </button>
-
       <div className={"collapse navbar-collapse " + show}>
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
@@ -27,13 +26,12 @@ const NavNar = () => {
             <Link to="/shop" title="Shop" className="nav-link">Shop</Link>
           </li>
           <li className="nav-item">
-          <Link to="/shoppingcart" title="ShoppingCart" className="nav-link"><span><GiShoppingCart size="25" />ShoppingCart</span></Link>
+            <Link to="/shoppingcart" title="ShoppingCart" className="nav-link"><span><GiShoppingCart size="25" />ShoppingCart</span></Link>
           </li>
-
         </ul>
       </div>
     </nav>
   );
 }
 
-export default NavNar;
+export default NavBar;

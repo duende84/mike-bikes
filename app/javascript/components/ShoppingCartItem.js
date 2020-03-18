@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
+import { connect, useSelector } from "react-redux";
+import addOrderItem from '../store/actions/addOrderItem';
 
-const ShoppingCartItem = ({product}) => {
+const ShoppingCartItem = ({ product, addOrderItem }) => {
+  const orderItems = useSelector(state => {
+    return state.orderReducer.orderItems
+  })
+  console.log('orderItems: ',orderItems);
+
   const [price, setPrice] = useState(product.price);
   var initialPrice=product.price
+  var Qty = 0
+  let orderItem= {product_id: product.id, qty: Qty}
   function changePrice(e){
-    var total=initialPrice*e.target.value
+    var total = initialPrice*e.target.value
+    Qty=e.target.value
     setPrice(total);
+    addOrderItem(orderItem)
   }
   return(
     <div className="card-body">
@@ -21,12 +32,15 @@ const ShoppingCartItem = ({product}) => {
         </div>
         <div className="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
           <div className="col-3 col-sm-3 col-md-6 text-md-right" >
-            <h6><strong><span className="text-muted">Us {price}</span></strong></h6>
+            <h6><strong><span className="text-muted">$ {price} USD</span></strong></h6>
           </div>
           <div className="col-4 col-sm-4 col-md-4">
             <div className="row">
               <input type="number" step="1" max="99" min="1" defaultValue="1" name="Qty" className="qty" size="1" onChange={e => changePrice(e)}/>
             </div>
+          </div>
+          <div class="checkbox checkbox-primary">
+            <input id="checkbox2" type="checkbox" />
           </div>
         </div>
       </div>
@@ -34,4 +48,4 @@ const ShoppingCartItem = ({product}) => {
   );
 }
 
-export default ShoppingCartItem;
+export default connect(null, {addOrderItem})(ShoppingCartItem);

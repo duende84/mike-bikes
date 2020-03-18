@@ -4,8 +4,10 @@ class Api::V1::OrdersController < ApplicationController
   def create
     puts "1params: #{order_params['email']}"
     puts "2params: #{order_params['product_ids']}"
-    OrderMailer.with(email: order_params['email'], product_ids: order_params['product_ids']).new_order_email.deliver_later
+    OrderMailer.new_order_email(order_params['email'], order_params['product_ids']).deliver_later
+    puts "send: ok"
     return true
+
     # @order = Order.new(order_params)
     # if @order.save
     #   flash[:succes] = "Thank for you order"
