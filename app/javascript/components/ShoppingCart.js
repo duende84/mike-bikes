@@ -7,20 +7,21 @@ import NavBar from './NavBar';
 import ShoppingCartItem from './ShoppingCartItem';
 
 
-const ShoppingCart = ({addOrderItem}) => {
+const ShoppingCart = () => {
   const alert = useAlert()
   const cartItems = useSelector(state => {
-    return state.cartReducer.cartItems
+    return state.reducer.cartItems
   })
   var email = null
 
-  function handleChange (e) {
+  const handleChange = (e) => {
     email= e.target.value
   }
+  var iValue = 0;
+  iValue = cartItems.reduce(function (total, currentValue) {return total + (currentValue.price*currentValue.quantity)},iValue);
 
   const sendMail = async () => {
-    let params = { order: { email: email, product_ids: [1,2,3] } }
-    console.log('parametros: ',params)
+    let params = { order: { email: email, products: cartItems }}
     const config = {
       method:'POST',
       body: JSON.stringify(params),
@@ -31,17 +32,18 @@ const ShoppingCart = ({addOrderItem}) => {
     }
     const response = await fetch(`/api/v1/orders`, config)
     if (response){
-      console.log('envio correo')
+      alert.removeAll();
+      alert.success('Email has been sent successfully',{timeout: 4000})
     }
     else {
-      console.log('paila')
+      alert.error('Email hasn t  been sent successfully, try it again',{timeout: 4000})
     }
   }
 
-  function createMail(){
+  const createMail= () => {
     alert.show(
       <div>
-        Since you want to buy these products, leave us your information and our advisor will contact you directly.
+        Leave us your contact information.
         <div>
           <label style={{color:'cyan'}}>Email:
             <input type="text" onChange={e => handleChange(e)}></input>
@@ -65,6 +67,9 @@ const ShoppingCart = ({addOrderItem}) => {
         ))}
       </div>
       <div className="card-footer">
+        <div className="pull-right" >
+          Total price: <b>$ {iValue} USD</b>
+        </div>
         <Link to="/shop" className="btn btn-outline-info btn-sm pull-right "><span>Continue shopping</span></Link>
         <div className="pull-right">
           <a onClick={createMail}  className="btn btn-success pull-right">BUY</a>

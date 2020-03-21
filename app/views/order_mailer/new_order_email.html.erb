@@ -8,10 +8,13 @@
     Order details<br>
     --------------------------
     </p>
-    <p>Product Ids: <%= @product_ids %></p>
-    <p>
-    Message:<br>
-    ----------
-
+    <% @products.each do |product| %>
+      PRODUCT:
+      <p>Product Id: <%= product[:id] %> </p>
+      <p>Product Name: <%= product[:name] %> </p>
+      <p>Product Price: <%= product[:price] %> </p>
+      <p>Quantity: <%= product[:quantity] %> </p>
+      ----------------------------------------------
+    <% end %>
   </body>
 </html>

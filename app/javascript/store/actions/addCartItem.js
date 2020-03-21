@@ -4,5 +4,4 @@ const addCartItem = cartItem => {
     payload: cartItem
   }
 };
-
 export default addCartItem;

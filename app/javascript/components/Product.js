@@ -4,16 +4,16 @@ import { connect, useSelector } from "react-redux";
 import { MdAddShoppingCart } from "react-icons/md";
 import Truncate from 'react-truncate';
 import addCartItem from '../store/actions/addCartItem';
+import isInShoppingCart from '../lib/isInShoppingCart';
 
 const Product = ({ product, addCartItem }) => {
   const cartItems = useSelector(state => {
-    return state.cartReducer.cartItems
+    return state.reducer.cartItems
   })
   const alert = useAlert()
-  function validation() {
-    var isInShoppingCart = cartItems.find(item => ((item.id === product.id )&&(item.name === product.name)))
-    if (isInShoppingCart) {
-      alert.info(' This item is already in the cart. If you want to buy several units of this product, you can increase it from the shopping cart section')
+  const validationItem = () => {
+    if (isInShoppingCart(cartItems,product)) {
+      alert.info('This item is already in the cart. Add more from the shopping cart section')
     } else {
       alert.success('product added to cart',{timeout: 2000})
       addCartItem(product)
@@ -33,7 +33,7 @@ const Product = ({ product, addCartItem }) => {
           </div>
           <div className="row card-button">
             <div className="col">
-              <a onClick={validation} className="btn btn-primary"> <MdAddShoppingCart size="25"/> $ {product.price} USD</a>
+              <a onClick={validationItem} className="btn btn-primary"> <MdAddShoppingCart size="25"/> $ {product.price} USD</a>
             </div>
           </div>
         </div>

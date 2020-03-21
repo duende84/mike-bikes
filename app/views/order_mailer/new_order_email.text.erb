@@ -5,5 +5,11 @@ Order Details:
 -------------------------
 
 Email: <%= @email %>
-
-Message:
+<% @products.each do |product| %>
+  PRODUCT:
+  <p>Product Id: <%= product[:id] %> </p>
+  <p>Product Name: <%= product[:name] %> </p>
+  <p>Product Price: <%= product[:price] %> </p>
+  <p>Quantity: <%= product[:quantity] %> </p>
+  ----------------------------------------------
+<% end %>
