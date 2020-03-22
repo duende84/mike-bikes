@@ -22,13 +22,13 @@ export default (state = initialState, action) => {
     case 'UPDATE_ITEM':
       let itemsToUpdate = [...state.cartItems];
       let cItems = itemsToUpdate.map((item) => {
-        if((item.id === action.payload.product.id)&&( item.name === action.payload.product.name)){
+        if((item.id === action.payload.item.id) && (item.name === action.payload.item.name)){
           return {
             ...item,
             quantity: action.payload.quantity
           }
         }
-        return item
+        return item;
       });
       state = {
         ...state,

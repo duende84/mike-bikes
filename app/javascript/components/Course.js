@@ -1,23 +1,24 @@
 import React from 'react';
-import { connect, useSelector } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux';
 import { useAlert } from 'react-alert';
-import { MdAddShoppingCart } from "react-icons/md";
+import { MdAddShoppingCart } from 'react-icons/md';
 import Truncate from 'react-truncate';
-import addCartItem from '../store/actions/addCartItem';
+import actions from '../store/actions';
 import isInShoppingCart from '../lib/isInShoppingCart';
 
-const Course = ({course, addCartItem}) => {
+const Course = ({course}) => {
   const alert = useAlert()
+  const dispatch = useDispatch();
   const cartItems = useSelector(state => {
     return state.reducer.cartItems
   })
 
   const validationItem = () => {
     if (isInShoppingCart(cartItems,course)) {
-      alert.info('This item is already in the cart. Add more from the shopping cart section')
+      alert.info('This course is already in the cart. Add more from the shopping cart section')
     } else {
-      alert.success('product added to cart',{timeout: 2000})
-      addCartItem(course)
+      alert.success('Product added to cart',{timeout: 2000})
+      dispatch(actions.addCartItem(course));
     }
   }
 
@@ -43,4 +44,4 @@ const Course = ({course, addCartItem}) => {
   );
 }
 
-export default connect(null, {addCartItem})(Course);
+export default Course;

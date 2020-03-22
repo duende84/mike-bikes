@@ -1,24 +1,26 @@
 import React from 'react';
 import { useAlert } from 'react-alert';
-import { connect, useSelector } from "react-redux";
-import { MdAddShoppingCart } from "react-icons/md";
+import { useSelector, useDispatch } from 'react-redux';
+import { MdAddShoppingCart } from 'react-icons/md';
 import Truncate from 'react-truncate';
-import addCartItem from '../store/actions/addCartItem';
+import actions from '../store/actions';
 import isInShoppingCart from '../lib/isInShoppingCart';
 
-const Product = ({ product, addCartItem }) => {
+const Product = ({ product }) => {
+  const alert = useAlert();
+  const dispatch = useDispatch();
   const cartItems = useSelector(state => {
     return state.reducer.cartItems
-  })
-  const alert = useAlert()
+  });
+
   const validationItem = () => {
     if (isInShoppingCart(cartItems,product)) {
-      alert.info('This item is already in the cart. Add more from the shopping cart section')
+      alert.info('This product is already in the cart. Add more from the shopping cart section');
     } else {
-      alert.success('product added to cart',{timeout: 2000})
-      addCartItem(product)
+      alert.success('Product added to cart',{timeout: 2000});
+      dispatch(actions.addCartItem(product));
     }
-  }
+  };
 
   return(
     <div className="col-12 col-md-6 col-lg-4">
@@ -42,4 +44,4 @@ const Product = ({ product, addCartItem }) => {
   );
 }
 
-export default connect(null, {addCartItem})(Product);
+export default Product;
