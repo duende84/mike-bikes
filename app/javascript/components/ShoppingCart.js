@@ -7,7 +7,7 @@ import NavBar from './NavBar';
 import ShoppingCartItem from './ShoppingCartItem';
 
 const ShoppingCart = () => {
-  const alert = useAlert()
+  const alert = useAlert();
   const cartItems = useSelector(state => {
     return state.reducer.cartItems
   })
@@ -18,7 +18,7 @@ const ShoppingCart = () => {
   const total = cartItems.reduce((acumulator, currentValue) => { return acumulator + (currentValue.price * currentValue.quantity) }, 0);
 
   const sendMail = async () => {
-    let params = { order: { email: email, products: cartItems }}
+    let params = { order: { email, products: cartItems } }
     const config = {
       method:'POST',
       body: JSON.stringify(params),
@@ -30,10 +30,10 @@ const ShoppingCart = () => {
     const response = await fetch(`/api/v1/orders`, config)
     if (response){
       alert.removeAll();
-      alert.success('Order has been sent successfully',{timeout: 2000})
+      alert.success('Order has been sent successfully', { timeout: 2000 });
     }
     else {
-      alert.error('Order has not been sent, please try it again',{timeout: 2000})
+      alert.error('Order has not been sent, please try it again', { timeout: 2000 });
     }
   }
 
@@ -42,10 +42,10 @@ const ShoppingCart = () => {
       <div>
         Leave us your contact information.
         <div>
-          <label style={{color:'cyan'}}>Email:
-            <input type="text" onChange={e => handleChange(e)}></input>
+          <label style= {{ color:'cyan' }}>Email:
+            <input type="text" onChange={ e => handleChange(e) }></input>
           </label>
-          <button onClick={sendMail}>Send</button>
+          <button onClick={ sendMail }>Send</button>
         </div>
       </div>
     )
@@ -58,17 +58,17 @@ const ShoppingCart = () => {
         <GiShoppingCart size="25"/>&ensp;Shopping Cart
       </div>
       <div className="row">
-        {cartItems.map(item => (
-          <ShoppingCartItem item={item} />
-        ))}
+        { cartItems.map(item => (
+          <ShoppingCartItem item={ item } />
+        )) }
       </div>
       <div className="card-footer">
         <div>
           Total price: <b>$ {total} USD</b>
         </div>
         <div>
-          <Link to="/shop" className="btn btn-info"><span>Continue shopping</span></Link>
-          <a onClick={createMail} className="btn btn-success">Order Now</a>
+          <Link to="/shop" className="btn btn-info"><span>Continue shopping</span></Link>&ensp;
+          <a onClick={ createMail } className="btn btn-success">Order Now</a>
         </div>
       </div>
     </div>

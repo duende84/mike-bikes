@@ -185,7 +185,6 @@ a:hover {
   }
   .top img{display: none;}
   .horizontal-accordion ul li a {vertical-align:bottom;padding-bottom: 100%;}
-  .vertical-accordion ul li:first-of-type{}
   .bottom{display: none;}
   .horizontal-accordion{display:none;}
   .vertical-accordion{display:block;}
@@ -241,64 +240,12 @@ a:hover {
   color: #FFFFFF;
   font-weight:600;
 }
-.quantity {
-  float: left;
-  text-align: center;
-  margin-right: 5px;
-  background-color: #eee;
-  position: absolute;
-  width: 60px;
-  overflow: hidden
+.shoppingcart-img {
+  width: 120px;
+  height: 80px;
 }
-.quantity input {
-  margin: 0;
-  text-align: center;
-  width: 15px;
-  height: 15px;
-  padding: 0;
-  float: right;
-  color: #000;
-  font-size: 20px;
-  border: 0;
-  outline: 0;
-  background-color: #F6F6F6
+
+.qty {
+  width: 50px;
 }
-.quantity input.qty {
-  position: relative;
-  border: 0;
-  width: 100%;
-  height: 40px;
-  padding: 10px 25px 10px 10px;
-  text-align: center;
-  font-weight: 400;
-  font-size: 15px;
-  border-radius: 0;
-  background-clip: padding-box
-}
-.quantity .minus, .quantity .plus {
-  line-height: 0;
-  background-clip: padding-box;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-background-size: 6px 30px;
-  -moz-background-size: 6px 30px;
-  color: #bbb;
-  font-size: 20px;
-  position: absolute;
-  height: 50%;
-  border: 0;
-  right: 0;
-  padding: 0;
-  width: 25px;
-  z-index: 3
-}
-.quantity .minus:hover, .quantity .plus:hover {
-  background-color: #dad8da
-}
-.quantity .minus {
-  bottom: 0
-}
-.shopping-cart {
-  margin-top: 20px;
-}
+

@@ -12,9 +12,17 @@ const updateCartItem = cartItem => {
   }
 };
 
+const deleteCartItem = cartItem => {
+  return {
+    type: 'DELETE_ITEM',
+    payload: cartItem
+  }
+};
+
 const actions = {
   addCartItem,
-  updateCartItem
+  updateCartItem,
+  deleteCartItem
 };
 
 export default actions;

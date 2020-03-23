@@ -16,24 +16,35 @@ export default (state = initialState, action) => {
       state = {
         ...state,
         cartItems: items
-      }
+      };
       return state;
 
     case 'UPDATE_ITEM':
       let itemsToUpdate = [...state.cartItems];
-      let cItems = itemsToUpdate.map((item) => {
+      let itemsInUpdate = itemsToUpdate.map((item) => {
         if((item.id === action.payload.item.id) && (item.name === action.payload.item.name)){
           return {
             ...item,
             quantity: action.payload.quantity
-          }
+          };
         }
         return item;
       });
       state = {
         ...state,
-        cartItems: cItems
-      }
+        cartItems: itemsInUpdate
+      };
+      return state;
+
+    case 'DELETE_ITEM':
+      let itemsToDelete = [...state.cartItems];
+      let itemsInDelete = itemsToDelete.filter((item) => ((item.id !== action.payload.item.id) || (item.name !== action.payload.item.name)));
+      state = {
+        ...state,
+        cartItems: itemsInDelete
+      };
+      return state;
+
     default:
       return state;
   }
