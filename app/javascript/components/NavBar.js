@@ -25,11 +25,9 @@ const NavBar = () => {
           <li className="nav-item">
             <Link to="/shop" title="Shop" className="nav-link">Shop</Link>
           </li>
-          <li className="nav-item">
-            <Link to="/shoppingcart" title="ShoppingCart" className="nav-link"><GiShoppingCart size="25" /></Link>
-          </li>
         </ul>
       </div>
+      <Link to="/shoppingcart" title="ShoppingCart" className="nav-link"><GiShoppingCart size="25"/></Link>
     </nav>
   );
 }
