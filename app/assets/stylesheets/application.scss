@@ -185,7 +185,6 @@ a:hover {
   }
   .top img{display: none;}
   .horizontal-accordion ul li a {vertical-align:bottom;padding-bottom: 100%;}
-  .vertical-accordion ul li:first-of-type{}
   .bottom{display: none;}
   .horizontal-accordion{display:none;}
   .vertical-accordion{display:block;}
@@ -241,3 +240,12 @@ a:hover {
   color: #FFFFFF;
   font-weight:600;
 }
+.shoppingcart-img {
+  width: 120px;
+  height: 80px;
+}
+
+.qty {
+  width: 50px;
+}
+

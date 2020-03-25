@@ -1,8 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useAlert } from 'react-alert';
+import { MdAddShoppingCart } from 'react-icons/md';
 import Truncate from 'react-truncate';
-import NavBar from './NavBar';
+import actions from '../store/actions';
+import isInShoppingCart from '../lib/isInShoppingCart';
 
-const Course = ({course}) => {
+const Course = ({ course }) => {
+  const alert = useAlert();
+  const dispatch = useDispatch();
+  const cartItems = useSelector(state => {
+    return state.reducer.cartItems
+  });
+
+  const itemValidation = () => {
+    if (isInShoppingCart(cartItems,course)) {
+      alert.info('This course is already in the cart. Add more from the shopping cart section', { timeout: 3000 });
+    } else {
+      alert.success('Course added to the cart', { timeout: 2000 });
+      dispatch(actions.addCartItem(course));
+    }
+  }
+
   return(
     <div className="col-12 col-md-6 col-lg-4">
       <div className="card">
@@ -16,7 +35,9 @@ const Course = ({course}) => {
           </div>
           <div className="row card-button">
             <div className="col">
-              <a href="#" className="btn btn-primary">Enroll now - {course.price}</a>
+              <a onClick={itemValidation} className="btn btn-primary">
+                <MdAddShoppingCart size="25"/> $ { course.price } USD
+              </a>
             </div>
           </div>
         </div>

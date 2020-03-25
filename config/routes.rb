@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     scope module: :v1, path: 'v1' do
       resources :products, only: [:index]
       resources :courses, only: [:index]
+      resources :orders, only: [:create]
     end
   end
 

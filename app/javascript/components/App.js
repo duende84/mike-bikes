@@ -5,6 +5,7 @@ import Home from './Home';
 import Profile from './Profile';
 import Academy from './Academy';
 import Shop from './Shop';
+import ShoppingCart from './ShoppingCart';
 import NotFound from './NotFound';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/academy" component={Academy} />
         <Route exact path="/shop" component={Shop} />
+        <Route exact path="/shoppingcart" component={ShoppingCart} />
         <Route component={NotFound} />
       </Switch>
     </Router>
