@@ -17,7 +17,7 @@ const Product = ({ product }) => {
     if (isInShoppingCart(cartItems,product)) {
       alert.info('This product is already in the cart. Add more from the shopping cart section', { timeout: 3000 });
     } else {
-      alert.success('Product added to cart', { timeout: 2000 });
+      alert.success('Product added to the cart', { timeout: 2000 });
       dispatch(actions.addCartItem(product));
     }
   };
@@ -27,15 +27,15 @@ const Product = ({ product }) => {
       <div className="card">
         <img className="card-img-top card-img" src={product.image.retina_thumbnail.url} alt={product.name} />
         <div className="card-body">
-          <h5 className="card-title">{ product.name }</h5>
+          <h5 className="card-title">{product.name}</h5>
           <div className="card-text">
-            <Truncate lines={ 3 } ellipsis={ <span>...</span> }>
-              { product.description }
+            <Truncate lines={3} ellipsis={<span>...</span>}>
+              {product.description}
             </Truncate>
           </div>
           <div className="row card-button">
             <div className="col">
-              <a onClick={ itemValidation } className="btn btn-primary"> <MdAddShoppingCart size="25"/> $ { product.price } USD</a>
+              <a onClick={itemValidation} className="btn btn-primary"> <MdAddShoppingCart size="25"/> $ { product.price } USD</a>
             </div>
           </div>
         </div>
