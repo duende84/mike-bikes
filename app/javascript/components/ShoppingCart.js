@@ -28,15 +28,14 @@ const ShoppingCart = () => {
       }
     }
     const response = await fetch(`/api/v1/orders`, config);
-    if (response){
+    if (response) {
       localStorage.removeItem('state');
       alert.removeAll();
       alert.success('Order has been sent successfully', { timeout: 2000 });
-    }
-    else {
+    } else {
       alert.error('Order has not been sent, please try it again', { timeout: 2000 });
     }
-  }
+  };
 
   const createMail= () => {
     alert.show(

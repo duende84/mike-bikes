@@ -1,11 +1,11 @@
 const localStorageItems = JSON.parse(localStorage.getItem('state'));
 var initialState;
 if (localStorageItems !== null) {
-  initialState = JSON.parse(localStorage.getItem('state'))
+  initialState = localStorageItems;
 } else {
   initialState = {
     cartItems: []
-  }
+  };
 }
 
 export default (state = initialState, action) => {
