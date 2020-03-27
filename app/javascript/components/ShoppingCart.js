@@ -26,7 +26,7 @@ const ShoppingCart = () => {
         'Accept': 'application/json',
         'Content_Type':'application/json'
       }
-    }
+    };
     const response = await fetch(`/api/v1/orders`, config);
     if (response) {
       localStorage.removeItem('state');
