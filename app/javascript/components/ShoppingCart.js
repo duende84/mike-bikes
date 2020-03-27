@@ -10,15 +10,15 @@ const ShoppingCart = () => {
   const alert = useAlert();
   const cartItems = useSelector(state => {
     return state.reducer.cartItems
-  })
-  var email = null
+  });
+  var email = null;
 
-  const handleChange = (e) => { email = e.target.value }
+  const handleChange = (e) => { email = e.target.value };
 
   const total = cartItems.reduce((acumulator, currentValue) => { return acumulator + (currentValue.price * currentValue.quantity) }, 0);
 
   const sendMail = async () => {
-    let params = { order: { email, products: cartItems } }
+    let params = { order: { email, products: cartItems } };
     const config = {
       method:'POST',
       body: JSON.stringify(params),
@@ -27,7 +27,7 @@ const ShoppingCart = () => {
         'Content_Type':'application/json'
       }
     }
-    const response = await fetch(`/api/v1/orders`, config)
+    const response = await fetch(`/api/v1/orders`, config);
     if (response){
       localStorage.removeItem('state');
       alert.removeAll();
@@ -43,14 +43,14 @@ const ShoppingCart = () => {
       <div>
         Leave us your contact information.
         <div>
-          <label style= {{ color:'cyan' }}>Email:
+          <label style={{ color:'cyan' }}>Email:
             <input type="text" onChange={ e => handleChange(e) }></input>
           </label>
-          <button onClick={ sendMail }>Send</button>
+          <button onClick={sendMail}>Send</button>
         </div>
       </div>
     )
-  }
+  };
 
   return (
     <div className="container border border-white h-100">
@@ -59,9 +59,9 @@ const ShoppingCart = () => {
         <GiShoppingCart size="25"/>&ensp;Shopping Cart
       </div>
       <div className="row">
-        { cartItems.map(item => (
-          <ShoppingCartItem item={ item } />
-        )) }
+        {cartItems.map(item => (
+          <ShoppingCartItem item={item} />
+        ))}
       </div>
       <div className="card-footer">
         <div>
@@ -69,11 +69,11 @@ const ShoppingCart = () => {
         </div>
         <div>
           <Link to="/shop" className="btn btn-info"><span>Continue shopping</span></Link>&ensp;
-          <a onClick={ createMail } className="btn btn-success">Order Now</a>
+          <a onClick={createMail} className="btn btn-success">Order Now</a>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default ShoppingCart;

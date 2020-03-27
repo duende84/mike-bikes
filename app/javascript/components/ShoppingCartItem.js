@@ -10,20 +10,19 @@ const ShoppingCartItem = ({ item }) => {
   const [price, setPrice] = useState(item.price);
 
   const changePrice = (e) => {
-    if (e.target.validity.valid){
+    if (e.target.validity.valid) {
       let total = item.price * e.target.value;
       setPrice(total);
       dispatch(actions.updateCartItem({ item, quantity: parseInt(e.target.value) }));
-    }
-    else{
+    } else {
       setPrice(item.price);
       dispatch(actions.updateCartItem({ item, quantity: 1 }));
     }
-  }
+  };
 
   const deleteItem = () => {
     dispatch(actions.deleteCartItem({ item }));
-  }
+  };
 
   return(
     <div className="card-body">
@@ -32,9 +31,9 @@ const ShoppingCartItem = ({ item }) => {
           <img className="shoppingcart-img" src={item.image.retina_thumbnail.url} alt={item.name}></img>
         </div>
         <div className="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-          <h4 className="product-name"><strong>{ item.name }</strong></h4>
-          <Truncate lines={ 3 } ellipsis={ <span>...</span> }>
-            { item.description }
+          <h4 className="product-name"><strong>{item.name}</strong></h4>
+          <Truncate lines={3} ellipsis={<span>...</span>}>
+            {item.description}
           </Truncate>
         </div>
         <div className="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
@@ -42,10 +41,10 @@ const ShoppingCartItem = ({ item }) => {
             <span>$ {price} USD</span>
           </div>
           <div className="col-4 col-sm-4 col-md-4">
-            <input type="number" step="1" min="1" pattern="[0-9]*" value={ item.quantity } className="qty" size="1" onChange={ e => changePrice(e) } required/>
+            <input type="number" step="1" min="1" pattern="[0-9]*" value={item.quantity} className="qty" size="1" onChange={ e => changePrice(e) } required/>
           </div>
           <div className="col-2 col-sm-2 col-md-2 text-right">
-            <button type="button" className="btn btn-outline-danger btn-xs" onClick={ deleteItem }>
+            <button type="button" className="btn btn-outline-danger btn-xs" onClick={deleteItem}>
             <FiTrash2 size="20"/>
             </button>
           </div>

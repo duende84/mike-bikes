@@ -1,9 +1,8 @@
-const localStorageItems =JSON.parse(localStorage.getItem('state'));
+const localStorageItems = JSON.parse(localStorage.getItem('state'));
 var initialState;
-if(localStorageItems !== null){
+if (localStorageItems !== null) {
   initialState = JSON.parse(localStorage.getItem('state'))
-}
-else{
+} else {
   initialState = {
     cartItems: []
   }
