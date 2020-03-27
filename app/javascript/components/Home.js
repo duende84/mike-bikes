@@ -5,13 +5,13 @@ import $ from 'jquery';
 const Home = () => {
   const [content, setContent] = useState("Choose a Discipline...");
 
-  function mouseOver(e){
+  const mouseOver = (e) => {
     setContent(e.target.title);
-  }
+  };
 
-  function mouseLeave(e){
+  const mouseLeave = (e) => {
     setContent("Choose a Discipline...");
-  }
+  };
 
   $(".horizontal-accordion ul li").hover(function(){
     var self = $(this);

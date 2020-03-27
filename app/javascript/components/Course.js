@@ -36,7 +36,7 @@ const Course = ({ course }) => {
           <div className="row card-button">
             <div className="col">
               <a onClick={itemValidation} className="btn btn-primary">
-                <MdAddShoppingCart size="25"/> $ { course.price } USD
+                <MdAddShoppingCart size="25"/> $ {course.price} USD
               </a>
             </div>
           </div>

@@ -35,7 +35,7 @@ const Product = ({ product }) => {
           </div>
           <div className="row card-button">
             <div className="col">
-              <a onClick={itemValidation} className="btn btn-primary"> <MdAddShoppingCart size="25"/> $ { product.price } USD</a>
+              <a onClick={itemValidation} className="btn btn-primary"> <MdAddShoppingCart size="25"/> $ {product.price} USD</a>
             </div>
           </div>
         </div>
