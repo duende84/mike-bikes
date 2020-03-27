@@ -5,11 +5,11 @@ import $ from 'jquery';
 const Home = () => {
   const [content, setContent] = useState("Choose a Discipline...");
 
-  function mouseOver(e){
+  const mouseOver = (e) => {
     setContent(e.target.title);
   }
 
-  function mouseLeave(e){
+  const mouseLeave = (e) => {
     setContent("Choose a Discipline...");
   }
 
@@ -29,13 +29,13 @@ const Home = () => {
       </div>
       <div className="horizontal-accordion">
         <ul>
-          <li onMouseEnter={e => mouseOver(e)} onMouseLeave={e => mouseLeave(e)}>
+          <li onMouseEnter={ e => mouseOver(e) } onMouseLeave={ e => mouseLeave(e) }>
             <Link to="/profile" title="Profile"><span>Profile</span></Link>
           </li>
-          <li onMouseEnter={e => mouseOver(e)} onMouseLeave={e => mouseLeave(e)}>
+          <li onMouseEnter={ e => mouseOver(e) } onMouseLeave={ e => mouseLeave(e) }>
             <Link to="/academy" title="Academy"><span>Academy</span></Link>
           </li>
-          <li onMouseEnter={e => mouseOver(e)} onMouseLeave={e => mouseLeave(e)}>
+          <li onMouseEnter={ e => mouseOver(e) } onMouseLeave={ e => mouseLeave(e) }>
             <Link to="/shop" title="Shop"><span>Shop</span></Link>
           </li>
         </ul>
@@ -50,7 +50,7 @@ const Home = () => {
       </div>
 
       <div className="bottom">
-        <div className="content">{content}</div>
+        <div className="content">{ content }</div>
       </div>
     </div>
   );

@@ -12,12 +12,12 @@ const App = () => {
   return(
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/academy" component={Academy} />
-        <Route exact path="/shop" component={Shop} />
-        <Route exact path="/shoppingcart" component={ShoppingCart} />
-        <Route component={NotFound} />
+        <Route exact path = "/" component = { Home } />
+        <Route exact path = "/profile" component = { Profile } />
+        <Route exact path = "/academy" component = { Academy } />
+        <Route exact path = "/shop" component = { Shop } />
+        <Route exact path = "/shoppingcart" component = { ShoppingCart } />
+        <Route component = { NotFound } />
       </Switch>
     </Router>
   );
