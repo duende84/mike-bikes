@@ -1,6 +1,13 @@
-const initialState = {
-  cartItems: []
-};
+const localStorageItems =JSON.parse(localStorage.getItem('state'));
+var initialState;
+if(localStorageItems !== null){
+  initialState = JSON.parse(localStorage.getItem('state'))
+}
+else{
+  initialState = {
+    cartItems: []
+  }
+}
 
 export default (state = initialState, action) => {
   switch(action.type) {
@@ -17,6 +24,7 @@ export default (state = initialState, action) => {
         ...state,
         cartItems: items
       };
+      localStorage.setItem('state', JSON.stringify(state));
       return state;
 
     case 'UPDATE_ITEM':
@@ -34,6 +42,7 @@ export default (state = initialState, action) => {
         ...state,
         cartItems: itemsInUpdate
       };
+      localStorage.setItem('state', JSON.stringify(state));
       return state;
 
     case 'DELETE_ITEM':
@@ -43,6 +52,7 @@ export default (state = initialState, action) => {
         ...state,
         cartItems: itemsInDelete
       };
+      localStorage.setItem('state', JSON.stringify(state));
       return state;
 
     default:

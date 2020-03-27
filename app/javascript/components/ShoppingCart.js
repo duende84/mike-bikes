@@ -29,6 +29,7 @@ const ShoppingCart = () => {
     }
     const response = await fetch(`/api/v1/orders`, config)
     if (response){
+      localStorage.removeItem('state');
       alert.removeAll();
       alert.success('Order has been sent successfully', { timeout: 2000 });
     }
