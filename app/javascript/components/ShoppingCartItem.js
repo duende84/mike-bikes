@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import Truncate from 'react-truncate';
 import actions from '../store/actions';
 import { FiTrash2 } from "react-icons/fi";
 
 const ShoppingCartItem = ({ item }) => {
+
   const dispatch = useDispatch();
 
-  const [price, setPrice] = useState(item.price);
-
+  var price = (item.price * item.quantity);
   const changePrice = (e) => {
     if (e.target.validity.valid) {
-      let total = item.price * e.target.value;
-      setPrice(total);
       dispatch(actions.updateCartItem({ item, quantity: parseInt(e.target.value) }));
     } else {
-      setPrice(item.price);
       dispatch(actions.updateCartItem({ item, quantity: 1 }));
     }
   };
