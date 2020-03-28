@@ -11,6 +11,12 @@ const ShoppingCart = () => {
   const cartItems = useSelector(state => {
     return state.reducer.cartItems
   });
+  const products = useSelector(state => {
+    return state.reducer.cartItems.filter(item => item.type === 'Product')
+  });
+  const courses = useSelector(state => {
+    return state.reducer.cartItems.filter(item => item.type === 'Course')
+  });
   var email = null;
 
   const handleChange = (e) => { email = e.target.value };
@@ -18,9 +24,9 @@ const ShoppingCart = () => {
   const total = cartItems.reduce((acumulator, currentValue) => { return acumulator + (currentValue.price * currentValue.quantity) }, 0);
 
   const sendMail = async () => {
-    let params = { order: { email, products: cartItems } };
+    let params = { order: { email, total, courses, products } };
     const config = {
-      method:'POST',
+      method: 'POST',
       body: JSON.stringify(params),
       headers:{
         'Accept': 'application/json',
@@ -28,9 +34,9 @@ const ShoppingCart = () => {
       }
     };
     const response = await fetch(`/api/v1/orders`, config);
-    if (response) {
+    alert.removeAll();
+    if (response.ok) {
       localStorage.removeItem('state');
-      alert.removeAll();
       alert.success('Order has been sent successfully', { timeout: 2000 });
     } else {
       alert.error('Order has not been sent, please try it again', { timeout: 2000 });

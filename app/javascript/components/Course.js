@@ -14,11 +14,12 @@ const Course = ({ course }) => {
   });
 
   const itemValidation = () => {
+    alert.removeAll();
     if (isInShoppingCart(cartItems,course)) {
       alert.info('This course is already in the cart. Add more from the shopping cart section', { timeout: 3000 });
     } else {
       alert.success('Course added to the cart', { timeout: 2000 });
-      dispatch(actions.addCartItem(course));
+      dispatch(actions.addCartItem(course, 'Course'));
     }
   }
 

@@ -1,7 +1,8 @@
-const addCartItem = cartItem => {
+const addCartItem = (cartItem, itemType) => {
   return {
     type: 'ADD_ITEM_TO_CART',
-    payload: cartItem
+    payload: cartItem,
+    itemType: itemType
   }
 };
 
