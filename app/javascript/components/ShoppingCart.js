@@ -7,13 +7,20 @@ import NavBar from './NavBar';
 import ShoppingCartItem from './ShoppingCartItem';
 
 const ShoppingCart = () => {
+  var email = null;
   const alert = useAlert();
+
   const cartItems = useSelector(state => {
     return state.reducer.cartItems
   });
-  const products = cartItems.filter(item => item.type === 'Product');
-  const courses = cartItems.filter(item => item.type === 'Course');
-  var email = null;
+
+  const products = cartItems.filter(item => item.type === 'Product').map(product => (
+    { id: product.id, quantity: product.quantity }
+  ));
+
+  const courses = cartItems.filter(item => item.type === 'Course').map(course => (
+    { id: course.id, quantity: course.quantity }
+  ));
 
   const handleChange = (e) => { email = e.target.value };
 
@@ -53,28 +60,47 @@ const ShoppingCart = () => {
     )
   };
 
-  return (
-    <div className="container border border-white h-100">
-      <NavBar />
-      <div className="card-header bg-dark text-center">
-        <GiShoppingCart size="25"/>&ensp;Shopping Cart
-      </div>
-      <div>
-        {cartItems.map(item => (
-          <ShoppingCartItem item={item} />
-        ))}
-      </div>
-      <div className="card-footer">
-        <div>
-          Total price: <b>$ {total} USD</b>
+  if (cartItems.length) {
+    return (
+      <div className="container border border-white h-100">
+        <NavBar />
+        <div className="card-header bg-dark text-center">
+          <GiShoppingCart size="25"/>&ensp;Shopping Cart
         </div>
         <div>
-          <Link to="/shop" className="btn btn-info"><span>Continue shopping</span></Link>&ensp;
-          <a onClick={createMail} className="btn btn-success">Order Now</a>
+          {cartItems.map(item => (
+            <ShoppingCartItem item={item} />
+          ))}
+        </div>
+        <div className="card-footer">
+          <div>
+            Total price: <b>$ {total} USD</b>
+          </div>
+          <div>
+            <Link to="/shop" className="btn btn-info"><span>Continue shopping</span></Link>&ensp;
+            <a onClick={createMail} className="btn btn-success">Order Now</a>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return(
+      <div className="container border border-white h-100">
+        <NavBar />
+        <div className="card-header bg-dark text-center">
+        <GiShoppingCart size="25"/>&ensp;ShoppingCart is Empty
+        </div>
+        <div className="sc-emty">
+          Fill it going to academy or shop
+        </div>
+        <div className="card-footer">
+          <div>
+            <Link to="/shop" className="btn btn-info"><span>Continue shopping</span></Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 };
 
 export default ShoppingCart;

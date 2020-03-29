@@ -38,7 +38,7 @@ const ShoppingCartItem = ({ item }) => {
             <span>$ {price} USD</span>
           </div>
           <div className="col-4 col-sm-4 col-md-4">
-            <input type="number" step="1" min="1" pattern="[0-9]*" value={item.quantity} className="qty" size="1" onChange={ e => changePrice(e) } required/>
+            <input type="number" step="1" min="1" pattern="[0-9]*" value={item.quantity} className="qty" onChange={ e => changePrice(e) } required/>
           </div>
           <div className="col-2 col-sm-2 col-md-2 text-right">
             <button type="button" className="btn btn-outline-danger btn-xs" onClick={deleteItem}>
