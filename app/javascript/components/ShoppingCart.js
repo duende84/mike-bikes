@@ -11,12 +11,8 @@ const ShoppingCart = () => {
   const cartItems = useSelector(state => {
     return state.reducer.cartItems
   });
-  const products = useSelector(state => {
-    return state.reducer.cartItems.filter(item => item.type === 'Product')
-  });
-  const courses = useSelector(state => {
-    return state.reducer.cartItems.filter(item => item.type === 'Course')
-  });
+  const products = cartItems.filter(item => item.type === 'Product');
+  const courses = cartItems.filter(item => item.type === 'Course');
   var email = null;
 
   const handleChange = (e) => { email = e.target.value };
