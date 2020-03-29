@@ -20,8 +20,8 @@ class Api::V1::OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:email, :total,
-      { courses: [:id, :name, :price, :quantity]},
-      { products: [:id, :name, :price, :quantity]}
+      { courses: [:id, :quantity]},
+      { products: [:id, :quantity]}
     )
   end
 end
