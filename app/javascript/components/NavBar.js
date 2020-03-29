@@ -1,8 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GiShoppingCart } from 'react-icons/gi';
+import { useSelector } from 'react-redux';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { MdAddShoppingCart } from "react-icons/md";
 
 const NavBar = () => {
+  var icon;
+  const cartItems = useSelector(state => {
+    return state.reducer.cartItems
+  });
+  if (cartItems.length) {
+    icon = <MdAddShoppingCart size="25" color="green"/>
+  } else {
+    icon = <AiOutlineShoppingCart size="25"/>
+  }
   const [collapsed, setCollapsed] = useState(false);
   const show = collapsed ? "show" : "";
 
@@ -27,7 +38,7 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      <Link to="/shoppingcart" title="ShoppingCart" className="nav-link"><GiShoppingCart size="25"/></Link>
+      <Link to="/shoppingcart" title="ShoppingCart" className="nav-link">{icon}</Link>
     </nav>
   );
 }
