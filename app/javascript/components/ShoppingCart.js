@@ -18,12 +18,12 @@ const ShoppingCart = () => {
 
   const productsList = cartItems.filter(item => item.type === 'Product');
   productsList.map(product => (
-    products = [...products, {id: product.id, quantity: product.quantity}]
+    products = [ ...products, { id: product.id, quantity: product.quantity }]
   ));
 
   const coursesList = cartItems.filter(item => item.type === 'Course');
   coursesList.map(course => (
-    courses = [...courses, {id: course.id, quantity: course.quantity}]
+    courses = [...courses, { id: course.id, quantity: course.quantity }]
   ));
 
   const handleChange = (e) => { email = e.target.value };
