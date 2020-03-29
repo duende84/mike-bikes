@@ -7,13 +7,24 @@ import NavBar from './NavBar';
 import ShoppingCartItem from './ShoppingCartItem';
 
 const ShoppingCart = () => {
+  var products = [];
+  var courses = [];
+  var email = null;
+
   const alert = useAlert();
   const cartItems = useSelector(state => {
     return state.reducer.cartItems
   });
-  const products = cartItems.filter(item => item.type === 'Product');
-  const courses = cartItems.filter(item => item.type === 'Course');
-  var email = null;
+
+  const productsList = cartItems.filter(item => item.type === 'Product');
+  productsList.map(product => (
+    products = [...products, {id: product.id, quantity: product.quantity}]
+  ));
+
+  const coursesList = cartItems.filter(item => item.type === 'Course');
+  coursesList.map(course => (
+    courses = [...courses, {id: course.id, quantity: course.quantity}]
+  ));
 
   const handleChange = (e) => { email = e.target.value };
 
