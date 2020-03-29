@@ -5,16 +5,28 @@
   <body>
     <p>You got a new order from <%= @email %>!</p>
     <p>
-    Order details<br>
-    --------------------------
+      Order details<br>
+      --------------------------
     </p>
-    <% @products.each do |product| %>
-      PRODUCT:
-      <p>Product Id: <%= product[:id] %> </p>
-      <p>Product Name: <%= product[:name] %> </p>
-      <p>Product Price: <%= product[:price] %> </p>
-      <p>Quantity: <%= product[:quantity] %> </p>
-      ----------------------------------------------
+    <% if @courses.any? %>
+      Courses:
+      <% @courses.each do |course| %>
+        <p>Course Id: <%= course[:id] %> </p>
+        <p>Course Name: <%= course[:name] %> </p>
+        <p>Course Price: <%= course[:price] %> </p>
+        <p>Quantity: <%= course[:quantity] %> </p>
+        ----------------------------------------------
+      <% end %>
+    <% end %>
+    <% if @products.any? %>
+      Products:
+      <% @products.each do |product| %>
+        <p>Product Id: <%= product[:id] %> </p>
+        <p>Product Name: <%= product[:name] %> </p>
+        <p>Product Price: <%= product[:price] %> </p>
+        <p>Quantity: <%= product[:quantity] %> </p>
+        ----------------------------------------------
+      <% end %>
     <% end %>
   </body>
 </html>

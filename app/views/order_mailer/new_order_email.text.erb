@@ -4,12 +4,24 @@ You got a new order from <%= @email %>!
 Order Details:
 -------------------------
 
-Email: <%= @email %>
-<% @products.each do |product| %>
-  PRODUCT:
-  Product Id: <%= product[:id] %>
-  Product Name: <%= product[:name] %>
-  Product Price: <%= product[:price] %>
-  Quantity: <%= product[:quantity] %>
-  ----------------------------------------------
+<% if @courses.any? %>
+  Courses:
+  <% @courses.each do |course| %>
+    Course Id: <%= course[:id] %>
+    Course Name: <%= course[:name] %>
+    Course Price: <%= course[:price] %>
+    Quantity: <%= course[:quantity] %>
+    ----------------------------------------------
+  <% end %>
+<% end %>
+
+<% if @products.any? %>
+  Products:
+  <% @products.each do |product| %>
+    Product Id: <%= product[:id] %>
+    Product Name: <%= product[:name] %>
+    Product Price: <%= product[:price] %>
+    Quantity: <%= product[:quantity] %>
+    ----------------------------------------------
+  <% end %>
 <% end %>

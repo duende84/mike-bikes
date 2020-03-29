@@ -14,11 +14,12 @@ const Product = ({ product }) => {
   });
 
   const itemValidation = () => {
+    alert.removeAll();
     if (isInShoppingCart(cartItems,product)) {
       alert.info('This product is already in the cart. Add more from the shopping cart section', { timeout: 3000 });
     } else {
       alert.success('Product added to the cart', { timeout: 2000 });
-      dispatch(actions.addCartItem(product));
+      dispatch(actions.addCartItem(product, 'Product'));
     }
   };
 

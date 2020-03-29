@@ -16,7 +16,8 @@ export default (state = initialState, action) => {
         ...items,
         {
           ...action.payload,
-          quantity: 1
+          quantity: 1,
+          type: action.itemType
         }
       ];
       state = {
