@@ -59,7 +59,7 @@ const ShoppingCart = () => {
       <div className="card-header bg-dark text-center">
         <GiShoppingCart size="25"/>&ensp;Shopping Cart
       </div>
-      <div className="row">
+      <div>
         {cartItems.map(item => (
           <ShoppingCartItem item={item} />
         ))}
