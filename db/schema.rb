@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 2020_03_28_184721) do
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.bigint "order_id"
-    t.string "item_type"
-    t.bigint "item_id"
+    t.bigint "order_id", null: false
+    t.string "item_type", null: false
+    t.bigint "item_id", null: false
     t.integer "quantity", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -71,5 +71,6 @@ ActiveRecord::Schema.define(version: 2020_03_28_184721) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "order_items", "orders"
   add_foreign_key "products", "categories"
 end
