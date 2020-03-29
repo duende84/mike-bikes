@@ -95,7 +95,7 @@ const ShoppingCart = () => {
         </div>
         <div className="card-footer">
           <div>
-            <Link to="/shop" className="btn btn-info"><span>Continue shopping</span></Link>
+            <Link to="/shop" className="btn btn-info"><span>Start shopping</span></Link>
           </div>
         </div>
       </div>
