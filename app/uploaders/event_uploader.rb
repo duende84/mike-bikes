@@ -1,9 +1,9 @@
-class CourseUploader < CarrierWave::Uploader::Base
+class EventUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
-  THUMBNAIL_WIDTH = 200
+  THUMBNAIL_WIDTH = 500
 
-  process :tags => ['hnr-course']
+  process :tags => ['hnr-event']
 
   version :thumbnail do
     resize_to_fit(THUMBNAIL_WIDTH, nil)

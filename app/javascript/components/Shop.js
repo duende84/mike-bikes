@@ -18,7 +18,9 @@ const Shop = () => {
 
   return(
     <div className="container border border-white h-100">
-      <NavBar/>
+      <div className="mb-3">
+        <NavBar/>
+      </div>
       <div className="col">
         <div className="row">
           {products.map(product => (

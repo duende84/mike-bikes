@@ -18,7 +18,7 @@ const NavBar = () => {
   const show = collapsed ? "show" : "";
 
   return(
-    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <button className="navbar-toggler" type="button" onClick={ () => setCollapsed(!collapsed) }>
         <span className="navbar-toggler-icon"></span>
       </button>
