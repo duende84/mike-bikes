@@ -32,7 +32,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.7', '>= 4.7.1'
 
 # Admin UI
-gem 'rails_admin', '~> 2.0', '>= 2.0.1'
+gem 'rails_admin', '~> 2.0'
 
 # bootstrap
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
