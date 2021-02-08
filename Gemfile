@@ -38,7 +38,7 @@ gem 'rails_admin', '~> 2.0', '>= 2.0.1'
 gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 
 # File uploader
-gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'carrierwave', '~> 1.3'
 
 # File Storage Provider
 gem 'cloudinary', '~> 1.13', '>= 1.13.2'
